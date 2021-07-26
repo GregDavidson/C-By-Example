@@ -1,0 +1,61 @@
+Directory: c-by-example
+
+These are materials for a course teaching the C Programming Language using
+a graduated series of examples and exercises accompanied by commentary,
+rules, tables and hand-outs.
+
+All materials in this directory are:
+	Copyright (c) 2000-2009 J. Greg Davidson.
+	All rights reserved.
+
+The course is intended to be facilitated by a live instructor and these
+materials are not ready for wide dissemination, so please do not pass them
+on without checking with me first.
+
+If you are trying to use these materials for self-study:
+1.	Look at each program in the order they are listed in the
+	file PROGRAM-LIST.
+2.	Make and run each program, e.g.  from a Unix-like shell
+	where "$" is the command prompt:
+
+	$	more hello1.c
+	$	make hello1
+	$	./hello1
+
+	The make program will run the C Compiler for you, translating
+	your program to the machine language of your computer, creating
+	a new program which you can run by simply saying where it is,
+	e.g. "./" for "in this directory".  In Unix-like systems there is
+	no extension for programs, so "hello1.c" is a textfile containing
+	the C language source of a program simply named "hello1".
+
+3.	If the result of running the program is interesting or
+	confusing, experiment with the program and/or discuss it with
+	someone else.  You can freely edit any of the programs with any
+	text editor - I recommend emacs if you have it.  If you make a
+	mistake, the compiler may give you error messages or the program
+	may misbehave - it's important to make lots of mistakes!
+
+I'm hoping to add to this collection some other one-page programs which
+do more interesting things, such as:
+
+- Play existing audio, video and graphics files
+- Transform existing audio, video and graphics files
+- Generate brand new audio, video and graphics dynamically
+- A simple web browser
+- A simple web client and web robot
+- A database client
+
+I have examples of all of the above which need to be stripped
+of inessential features and cleaned up to be good examples.
+
+I also hope to accompany these examples with web pages including
+diagrams and animations which move this into becoming a free Web
+course which would be fun for any individual or small group to 
+
+I'm looking for people who would enjoy helping with this and
+similar projects, so please let me know if this interests you!
+
+Enjoy,
+
+J. Greg Davidson
