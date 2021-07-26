@@ -1,61 +1,127 @@
-Directory: c-by-example
+#+TITLE: C By Example
+#+SUBTITLE: A Super-Short Course with Commentary, Exercises and References
+#+AUTHOR: J. Greg Davidson
+#+DATE: Circa 2014
+* C By Example
 
-These are materials for a course teaching the C Programming Language using
-a graduated series of examples and exercises accompanied by commentary,
-rules, tables and hand-outs.
+** Copyright (c) 2014 J. Greg Davidson
 
-All materials in this directory are:
-	Copyright (c) 2000-2009 J. Greg Davidson.
-	All rights reserved.
+The materials in this course may be used under the conditions of the [[file:LICENSE.md][license]].
 
-The course is intended to be facilitated by a live instructor and these
-materials are not ready for wide dissemination, so please do not pass them
-on without checking with me first.
+** Forward
 
-If you are trying to use these materials for self-study:
-1.	Look at each program in the order they are listed in the
-	file PROGRAM-LIST.
-2.	Make and run each program, e.g.  from a Unix-like shell
-	where "$" is the command prompt:
+*** How should this book be used?
 
-	$	more hello1.c
-	$	make hello1
-	$	./hello1
+There are many good ways to organize the process of learning to program,
+including self-study, group-study, highly structured courses, e.g.,
+Keller Plan courses, intensive short courses, etc. This text could be as
+part of any of these structures except for the short courses, which need
+a special treatment due to the limitations of time. I have had a great
+deal of experience with each of these methods. This text does not
+explicitly assume that you, the reader, have any particular resources.
+You can enhance the benefit of the text by alternating intensive periods
+of work by yourself with interactive sessions with other students and
+with experts.
 
-	The make program will run the C Compiler for you, translating
-	your program to the machine language of your computer, creating
-	a new program which you can run by simply saying where it is,
-	e.g. "./" for "in this directory".  In Unix-like systems there is
-	no extension for programs, so "hello1.c" is a textfile containing
-	the C language source of a program simply named "hello1".
+I assume that you are seriously interested in learning not just the
+syntax of the C language, but the best usage of it, and are interested
+in improving your programming ability as you goes along. The examples
+and proposed solutions are the best we have come up with so far, and are
+much better than most existing C code. In fact, we have been
+deliberately fanatical about good programming practices, often going
+beyond the real needs of the relatively short programs here. We do that
+because we want to prepared you with methods for successfully attacking
+programs larger than textbook size and for cleaning up some of the
+messes that you will find all too often when you start a project based
+on existing code.
 
-3.	If the result of running the program is interesting or
-	confusing, experiment with the program and/or discuss it with
-	someone else.  You can freely edit any of the programs with any
-	text editor - I recommend emacs if you have it.  If you make a
-	mistake, the compiler may give you error messages or the program
-	may misbehave - it's important to make lots of mistakes!
+*** What kind of words are je and jir?
 
-I'm hoping to add to this collection some other one-page programs which
-do more interesting things, such as:
+This text is written using the extended English pronouns Je and Jir. Je
+means he or she. Jir means him or her. The J can either be pronounced as
+in the English word judge, or pronounced like the s sound in pleasure.
 
-- Play existing audio, video and graphics files
-- Transform existing audio, video and graphics files
-- Generate brand new audio, video and graphics dynamically
-- A simple web browser
-- A simple web client and web robot
-- A database client
+If you don't like je and jir, feel free to replace them with something
+else according to your personal taste, e.g. you could replace
+=je'' with=he or she'' and =jir'' with=him or her''. Because these words
+are unique in this text, you can easily suit yourself. Please do not,
+however, replace them with =he'' and=him'' and then give away copies of
+that modified text, as that modification removes information; for
+instance, it would then be impossible for that next reader to
+distinguish a gender neutral ``he'' from those referring to a specific
+male person, such as Dennis Ritchie. Be sure that any global
+transformations of this text are reversible, or that you save a copy
+before you perform non-reversible transformations on it. When you pass
+on copies of this text, leave the next reader with the same rights as
+you have.
 
-I have examples of all of the above which need to be stripped
-of inessential features and cleaned up to be good examples.
+*** What format is this text in?
 
-I also hope to accompany these examples with web pages including
-diagrams and animations which move this into becoming a free Web
-course which would be fun for any individual or small group to 
+We are all hoping for a simple, standard, portable, widely used, network
+transparent, multi-media, presentation neutral hypertext system which
+allows readers to store their paths through it (this should be done by
+their presentation client) and to annotate and modify their view of the
+system. Unfortunately, despite the clearly expressed visions of people
+like Vanevar Bush and Ted Nelson, we are still lacking such a system. At
+the current time, the World Wide Web seems to come closest to these
+ideas.
 
-I'm looking for people who would enjoy helping with this and
-similar projects, so please let me know if this interests you!
+At the current time the course is using a variety of source formats
+which can be automatically translated into other popular formats. One or
+more filename suffixes indicate the format used.
 
-Enjoy,
+| Suffix   | Format                 |
+|----------+------------------------|
+| c        | Standard C             |
+| h        | Standard C             |
+| me       | roff me macros         |
+| md       | Markdown markup        |
+| eqn      | roff equation markup   |
+| pic      | roff picture markup    |
+| tbl      | roff table markup      |
 
-J. Greg Davidson
+*** How can I make improvements if I shouldn't ``lose information''?
+
+Please add to this text, especially more examples. A great way to
+improve the text is by adding alternative branches for specialized
+topics. Of course you are free to make destructive changes of the text
+and programs, and I hope that when you do so your goal is to improve
+their clarity and that you will use a revision control system, such as
+RCS, to retain the previous versions, and pass those along when you
+distribute this text.
+
+*** What kind of programming examples should a student start with?
+
+There are many kinds of programs which can be used as initial examples
+of programming. Perhaps the best initial examples use graphics,
+especially turtle graphics. Unfortunately, while C has a standard
+byte-stream oriented I/O model, it does not have a standard graphics
+model. Most of the graphics libraries found on systems with C compilers
+are complex and non-portable. Because of this, this text is organized
+with multiple tracks. The main track starts out using traditional
+character and numerical examples and moves on to data processing
+examples. The alternative graphics track assumes the existence of a
+simple turtle graphics library. One implementation of that library,
+based on the X Window System, is included with this text.
+
+*** Why not write this text using Literate Programming?
+
+There are many systems for producing computer readable textbooks. For
+many years I have been tempted by the tools developed by the Literate
+Programming community, started by Donald Knuth with his WEB system and
+his many programs, articles and books written with and about that system
+and style. Many other WEB-like systems have been written since,
+providing for Literate Programming with any computer language.
+Unfortunately, they all suffer from some serious weaknesses. First, they
+are designed to work with a single program which, however large it
+grows, is kept in a single file. Second, they do not allow an author to
+present different implementations of the same functions and data
+structures, with a flexible mechanism for making choices among these
+versions when the program file(s) are extracted from the web. Third, the
+traditions of Literate Programming seem to me to view program code as
+relatively unexpressive of the design and intent of the programmer, so
+that it is acceptable among Literate Programming practitioners to write
+fairly cryptic and low level code and surround it with lots of
+explanatory text. I prefer to stress the richness of the linguistic
+mechanisms in modern languages and have programs /as much as possible/
+explain themselves.
