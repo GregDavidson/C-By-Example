@@ -2,6 +2,10 @@
 *.o
 *.so
 *.out
+*.odt
+*.pdf
+*.tex
+*.ps
 TAGS
 TAGS-*
 Limbo
