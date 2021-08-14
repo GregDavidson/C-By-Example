@@ -1,5 +1,5 @@
 // double slash Comments extend to end of Line
-// capitaltion in Comments indicate specific technical meaning
+// capitaltion in Comments indicates specific technical meaning
 #include <stdio.h>
 // each # directive must be its own line
 // #include textually includes contents of C Code File
