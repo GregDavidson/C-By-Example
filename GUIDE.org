@@ -14,6 +14,7 @@
 ** [[file:Programs/squares1.c][squares1.c]]
 ** [[file:Programs/squares2.c][squares2.c]]
 ** [[file:Programs/greet1.c][greet1.c]]
+See [[file:Programs/greet1-diagram.txt][greet1-diagram.txt]]
 ** [[file:Programs/greet2.c][greet2.c]]
 ** [[file:Programs/greet3.c][greet3.c]]
 ** [[file:Programs/greet4a.c][greet4a.c]]
