@@ -3,10 +3,12 @@
 #+DATE: Circa 2021
 #+OPTIONS: num:nil
 
-* Order of Study with Commentary
+* Study Guide
 
 ** [[file:Programs/hello1.c][hello1.c]]
+[[file:Programs/hello1+comments.c][hello1+comments.c]]
 ** [[file:Programs/hello2.c][hello2.c]]
+[[file:Programs/hello2+comments.c][hello2+comments.c]]
 ** [[file:Programs/hello3.c][hello3.c]]
 ** [[file:Programs/putchar.c][putchar.c]]
 ** [[file:Programs/squares1.c][squares1.c]]
