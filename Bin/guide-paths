@@ -1,0 +1,2 @@
+#!/bin/bash
+awk 'BEGIN{FS="[]:[]+"}NF==5{print $3}' GUIDE.org
