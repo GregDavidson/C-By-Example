@@ -9,7 +9,7 @@
 
 Copyright (c) 2021 J. Greg Davidson
 
-The materials in this course may be used under the conditions of the [[file:LICENSE.md][license]].
+The materials in this course may be used under the conditions of the [[file:LICENSE.org][license]].
 
 ** tl/dr
 
