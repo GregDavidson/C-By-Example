@@ -35,6 +35,7 @@
 ** [[file:Programs/types.c][types.c]]
 ** [[file:Programs/types2.c][types2.c]]
 ** [[file:Programs/struct1.c][struct1.c]]
+See [[file:Programs/struct1-diagram.txt][struct1-diagram.txt]]
 ** [[file:Programs/struct2.c][struct2.c]]
 ** [[file:Programs/struct3.c][struct3.c]]
 ** [[file:Programs/struct4.c][struct4.c]]
