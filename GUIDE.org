@@ -46,6 +46,29 @@
 ** [[file:Programs/args.c][args.c]]
 ** [[file:Programs/dates.c][dates.c]]
 ** [[file:Programs/getline1.c][getline1.c]]
-** [[file:Programs/getline.c][getline.c]]
+A more common but maybe less clear version:
+ [[file:Programs/getline.c][getline.c]]
+*** Exercise challenges:
+1. Redesign so that the caller can specify a limit to how much space will be
+   allowed for the the size of the dynamically allocated array
+  - What should happen if the line is too long?
+
+3. Redesign so that instead of each instance of getline holding on to only 1
+   input character until it's time to put it into the final array, it instead
+   has a small fixed-size array which can hold several characters.
+   - The new getline should only delegate to a new getline if and when its small
+     array is full and more characters remain in the input line.
+   - All input characters need to placed into the final dynamically allocated
+     array as before.
+
 ** [[file:Programs/putint1.c][putint1.c]]
 ** [[file:Programs/putint2.c][putint2.c]]
+*** Exercise challenge:
+Change PutInt so that it prints large integers with commas
+in each third place - or as done in your country.  Hints:
+- Add a new parameter to PutPosInt which tracks your position
+- PutInt should pass a 0 to initialize the new parameter
+- Be /Maximally Lazy/: each call to PutPosInt should
+  - either print a single digit
+  - or a single comma 
+  - or print nothing!
