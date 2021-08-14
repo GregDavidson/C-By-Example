@@ -15,7 +15,7 @@ The materials in this course may be used under the conditions of the [[file:LICE
 
 1. Set up an environment for editing and running C Programs
    - See /Setting up a C Programming Environment/ below
-2. Study each file in the order listed in file:PROGRAM-LIST
+2. Study each entry listed in [[file:GUIDE.org][GUIDE.org]] in the given order
 3. If it's a program, run it, modify it, try variations!
 4. Try any suggested experiments.  Ignore nothing!
 
