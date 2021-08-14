@@ -1,24 +1,26 @@
-// double slash Comments extend to the end of the Line
-// capitalized words in Comments usually have specific technical meanings
+// double slash Comments extend to end of Line
+// capitaltion in Comments indicate specific technical meaning
 #include <stdio.h>
-// # directives have to be on their own line
-// #include textually includes the contents of a File of C Code
-// <stdio.h> means the <System> File named stdio.h containing
+// each # directive must be its own line
+// #include textually includes contents of C Code File
+// <stdio.h> means <System> File named stdio.h containing
 // Declarations of Standard Input-Output Functions such as puts
-// C Procedures are called Functions, whether Returning a Value or not
+// C Procedures called Functions, whether Value Returning or not
 
 int main(void)
-// Declares a function named main which when Called
-// takes NO parameters, i.e. void
+// Head of Function which:
+// Declares function named main
+// which when Called takes NO value, i.e. void
 // returns a value of type int (one word Integer)
 {
-// an open curly brace begins a block
-// i.e. a sequence of statements to be performed one by one in order
+// open curly brace begins a block
+// i.e. a sequence of statements to perform sequentially
   puts("Hello world!");
-// calls the library function puts with a literal string as an argument
-// the semi-colon ends the Statement
+// calls library function puts with literal string argument
+// semi-colon completes the Statement
   return 0;
-// Returns int 0 to the Function which Called this Function
+// Returns int 0 to Function which Called this Function
+// semi-colon completes the Statement
 }
-// Common C Style puts a close curly brace on a line by itself,
-// indented the same as the line with the matching open brace
+// Common C Style puts close curly brace on line by itself,
+// indented the same as line with matching open brace
