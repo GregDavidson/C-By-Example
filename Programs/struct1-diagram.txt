@@ -1,0 +1,27 @@
+Diagram for C-By-Example/Programs/struct1.c
+
+This file MUST be viewed with a monospace font!
+Number and age will occupy 1 machine word, minimum 2 bytes, typically 4 or 8 bytes.
+There is no separation between fields, so the | separators don't really exist!
+The integer values would really be in binary.
+The second diagram shows the reality using a hex digit for each four bits.
+The datatype definition occupies no storage at runtime.
+
+Datatype definition at compile time on a 64-bit machine:
+- each _ represents an 8-bit byte
+struct employee
+________|______________________|________|____________
+number   name                   age      ssn
+
+In the stackframe after function main has been called:
+- as we might imagine the values on a 64-bit machine
+main/newguy
+____3903|New_guy_______________|______18|111-222-3333
+number   name                   age      ssn
+
+In the stackframe after function main has been called:
+- assuming a 32-bit machine with each __ representing 1 byte
+- in binary rendered as hexidecimal so 2-hex digits per byte
+main/newguy
+____f3f|654e5f7775670a79________________________|______12|31312d3132322d3233333333
+number  name                                     age      ssn
