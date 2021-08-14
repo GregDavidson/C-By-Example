@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef char *String;	/* Pointer to '\0' terminated string. */
+typedef char *String;	// Pointer to '\0' terminated string.
 
 /* Read the remainder of a line of text into a C string,
  * preceeded by reserve bytes of extra space.  Return a

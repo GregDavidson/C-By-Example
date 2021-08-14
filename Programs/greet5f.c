@@ -3,7 +3,7 @@
 
 typedef char *Strptr;
 
-/* A 0 (the false int) will convert to NULL (the false pointer) */
+// A 0 (the false int) will convert to NULL (the false pointer)
 Strptr presidents[] = { "George", "Thomas", "John", 0 };
 
 void greet(Strptr, int);

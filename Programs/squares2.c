@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int square(int i);		/* prototype, argument name is optional */
+int square(int i);		// prototype, argument name is optional
 
 int sum_of_squares(int, int);
 

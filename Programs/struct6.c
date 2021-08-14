@@ -1,5 +1,5 @@
-#include <stdio.h>	/* redundant */
-#include "array2.h"	/* redundant */
+#include <stdio.h>	// redundant
+#include "array2.h"	// redundant
 #include "employee2.h"
 
 struct employee personnel[] = {

@@ -3,7 +3,7 @@
 
 enum { Normal_Exit, Bad_Args_Exit, No_Help_Exit, EOF_Exit };
 
-int GetChar(void) {	/* get one printable character or EOF */
+int GetChar(void) {	// get one printable character or EOF
   int c;
 
   while ( (c = getchar()) != EOF && !isgraph(c) )
@@ -17,7 +17,7 @@ int main(int argc, char **argv) {
 	fprintf(stderr, "%s: No arguments required!\n", argv[0]);
 	return Bad_Args_Exit;
   }
-  for ( ; ; ) {	/* infinite loop */
+  for ( ; ; ) {	// infinite loop
 	printf("Do you wish instructions? ");
 	switch ( GetChar() ) {
 	case 'y': case 'Y':

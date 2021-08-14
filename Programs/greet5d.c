@@ -3,7 +3,7 @@
 
 #define ARRAY_SIZE(array) (sizeof (array) / sizeof (array)[0])
 
-/* Adding an integer to a pointer advances it by that many elements */
+// Adding integer to pointer advances it by that many elements
 #define ARRAY_END(array) (array + ARRAY_SIZE(array))
 
 typedef char *Strptr;

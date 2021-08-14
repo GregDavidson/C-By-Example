@@ -13,7 +13,7 @@ int main(void) {
   int3 = (2+3) * 5;
   printf("int1 = %d, int2 = %d, int3 = %d\n", int1, int2, int3);
 
-  int1 = int2 = int3 = 0;	/* associates right to left */
+  int1 = int2 = int3 = 0;	// associates right to left
   printf("int1 = %d, int2 = %d, int3 = %d\n", int1, int2, int3);
 
   int1 = 123;

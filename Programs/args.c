@@ -5,11 +5,11 @@ int main(int argc, char **argv) {
 
   puts("\nHere they are last to first: ");
   while ( argc-- )
-    puts( argv[argc] );		/* random access */
+    puts( argv[argc] );		// random access
 
   puts("\nHere they are first to last: ");
   while ( *argv )
-    puts( *argv++ );		/* sequential access */
+    puts( *argv++ );		// sequential access
 
   return 0;
 }
