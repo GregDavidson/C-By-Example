@@ -1,59 +1,121 @@
 #+TITLE: C By Example
-#+SUBTITLE: A Super-Short Course with Commentary, Exercises and References
+#+SUBTITLE: A Super-Short Introduction to the C Programming Language
 #+AUTHOR: J. Greg Davidson
-#+DATE: Circa 2014
+#+DATE: Circa 2021
+#+OPTIONS: num:nil
 * C By Example
 
-** Copyright (c) 2014 J. Greg Davidson
+** Copyright and License
+
+Copyright (c) 2021 J. Greg Davidson
 
 The materials in this course may be used under the conditions of the [[file:LICENSE.md][license]].
 
+** tl/dr
+
+1. Set up an environment for editing and running C Programs
+   - See /Setting up a C Programming Environment/ below
+2. Study each file in the order listed in file:PROGRAM-LIST
+3. If it's a program, run it, modify it, try variations!
+4. Try any suggested experiments.  Ignore nothing!
+
 ** Forward
 
-*** How should this book be used?
+*** What does this course cover?
 
-There are many good ways to organize the process of learning to program,
-including self-study, group-study, highly structured courses, e.g.,
-Keller Plan courses, intensive short courses, etc. This text could be as
-part of any of these structures except for the short courses, which need
-a special treatment due to the limitations of time. I have had a great
-deal of experience with each of these methods. This text does not
-explicitly assume that you, the reader, have any particular resources.
-You can enhance the benefit of the text by alternating intensive periods
-of work by yourself with interactive sessions with other students and
-with experts.
+This course is intended to present the essence of /the C Programming Language/
+as it existed after it became an ANSI Standard in 1989. By that time /C/ had
+proven itself to be a remarkably powerful language for both systems and
+application programming, being the major language used to write /the Unix
+Operating System/ including kernel, device drivers, system services, utilities,
+the Unix Programmers Workbench, a large number of applications and more. /C/ was
+respected as much for its simplicity as for its power. The first /ANSI C
+Standard/ provided a reference base for the Language that retained the elegance
+of /Classic C/ with a few modernizations. While later versions of ANSI C and ISO
+C have added to the language, the original standard is the most elegant.
 
-I assume that you are seriously interested in learning not just the
-syntax of the C language, but the best usage of it, and are interested
-in improving your programming ability as you goes along. The examples
-and proposed solutions are the best we have come up with so far, and are
-much better than most existing C code. In fact, we have been
-deliberately fanatical about good programming practices, often going
-beyond the real needs of the relatively short programs here. We do that
-because we want to prepared you with methods for successfully attacking
-programs larger than textbook size and for cleaning up some of the
-messes that you will find all too often when you start a project based
-on existing code.
+*** What are the goals of this course?
 
-*** What kind of words are je and jir?
+The goals of this course are to give the diligent reader a strong intuitive
+grounding in the essence of the C Programming Language, suitable for
+1. writing new C programs
+2. understanding and perhaps modifying existing C programs
+3. understanding the low-level fundamentals of programming
+4. continuing on to learn Modern C, Modern C++ or other languages
 
-This text is written using the extended English pronouns Je and Jir. Je
-means he or she. Jir means him or her. The J can either be pronounced as
-in the English word judge, or pronounced like the s sound in pleasure.
+It is worth noting that the first goal of writing new C programs is much easier
+than the second goal of understanding and modifying existing programs.
 
-If you don't like je and jir, feel free to replace them with something
-else according to your personal taste, e.g. you could replace
-=je'' with=he or she'' and =jir'' with=him or her''. Because these words
-are unique in this text, you can easily suit yourself. Please do not,
-however, replace them with =he'' and=him'' and then give away copies of
-that modified text, as that modification removes information; for
-instance, it would then be impossible for that next reader to
-distinguish a gender neutral ``he'' from those referring to a specific
-male person, such as Dennis Ritchie. Be sure that any global
-transformations of this text are reversible, or that you save a copy
-before you perform non-reversible transformations on it. When you pass
-on copies of this text, leave the next reader with the same rights as
-you have.
+/C/ has several competitors in its niche, including /C++/ and /Rust/. These
+other languages are much more complex than /C/ and tend to obscure what is going
+on at the level where the programmer's code connects with the physical machine.
+/C/'s simplicity can be a boon to anyone who wants to understand what's going on
+when they run programs written in /any/ language. This understanding is critical
+to writing code which uses the machine's resources efficiently, e.g. maximizing
+speed and/or minimizing the use of memory, IO bandwidth, energy, etc.
+
+All of these goals are facilitated by starting with this earlier, simpler
+version of /the C Programming Language/.
+
+*** How can you achive these goals for yourself?
+
+To maximize your success with this course, you should 
++ Set up a /C Programming Environment/ on Your Machine
+  - or you could use an online environment
+  - see /Setting up a C Programming Environment/ below
++ Spend some time with each file in the [[file:PROGRAM-LIST][PROGRAM-LIST]] order
++ Be sure that you understand the function of each element
++ Compile and run each program
++ Try some modifications, exploring other possibilities
++ Carry out any suggested exercises
+
+**** Setting up a C Programming Environment
+
+At a minimum, a C Programming Environment should provide
+- a way to view and edit C source code
+  - which are just text files ending in .c and .h
+- a way to compile, link and run your programs
+  - compiling and linking may be transparent for simple programs
+  - explicit use of linkers or project files required for programs which
+    - use non-standard libraries
+    - consist of multiple .c files
+
+You'll want an online debugger which allows you to 
+- Set breakpoints and control execution
+- Inspect data structures in memory 
+
+There are many, many ways to set up a C Programming Environment
+  - It depends on your operating system
+  - It depends on your taste
+
+If you want to postpone this decision, you can use a free online enviroment such as 
+- https://www.tutorialspoint.com/compile_c_online.php
+- https://www.onlinegdb.com/online_c_compiler
+- https://www.mycompiler.io/online-c-compiler
+
+Many modern development environments support programming in a variety of
+languages. If you've already been programming in some other language, you may
+find that it already supports C or that it will if you download a few free
+components.
+
+**** C Programming on a Microsoft Windows system
+
+Many people use https://visualstudio.microsoft.com/
+- Search for a tutorial on how to get started!
+
+**** C Programming on a GNU Linux system
+
+  - Consult your documentation for how to install the usual programming environment 
+If you don't yet have a favorite editor, try /nano/.
+  - Experts prefer /vim/ or /emacs/ but don't learn them now!
+
+Prefer running /gcc/ and /make/ from the shell - probably /bash/ - rather than using a GUI.
+In this example, the shell types a prompt, e.g. /$/ and you type the rest:
+#+BEGIN_SRC sh
+$ nano hello.c 
+$ gcc -o hello hello.c
+$ ./hello
+#+END_SRC
 
 *** What format is this text in?
 
@@ -66,21 +128,21 @@ like Vanevar Bush and Ted Nelson, we are still lacking such a system. At
 the current time, the World Wide Web seems to come closest to these
 ideas.
 
-At the current time the course is using a variety of source formats
+At the current time the course is using a variety of text formats
 which can be automatically translated into other popular formats. One or
-more filename suffixes indicate the format used.
+more filename suffixes indicate the format used:
 
-| Suffix   | Format                 |
-|----------+------------------------|
-| c        | Standard C             |
-| h        | Standard C             |
-| me       | roff me macros         |
-| md       | Markdown markup        |
-| eqn      | roff equation markup   |
-| pic      | roff picture markup    |
-| tbl      | roff table markup      |
+| Suffix | Format                 |
+|--------+------------------------|
+| c      | Standard C             |
+| h      | Standard C             |
+| me     | roff me macros         |
+| org    | OrgMode markup         |
+| eqn    | roff equation markup   |
+| pic    | roff picture markup    |
+| tbl    | roff table markup      |
 
-*** How can I make improvements if I shouldn't ``lose information''?
+*** How can I make improvements if I shouldn't "lose information"?
 
 Please add to this text, especially more examples. A great way to
 improve the text is by adding alternative branches for specialized
@@ -90,38 +152,6 @@ their clarity and that you will use a revision control system, such as
 RCS, to retain the previous versions, and pass those along when you
 distribute this text.
 
-*** What kind of programming examples should a student start with?
-
-There are many kinds of programs which can be used as initial examples
-of programming. Perhaps the best initial examples use graphics,
-especially turtle graphics. Unfortunately, while C has a standard
-byte-stream oriented I/O model, it does not have a standard graphics
-model. Most of the graphics libraries found on systems with C compilers
-are complex and non-portable. Because of this, this text is organized
-with multiple tracks. The main track starts out using traditional
-character and numerical examples and moves on to data processing
-examples. The alternative graphics track assumes the existence of a
-simple turtle graphics library. One implementation of that library,
-based on the X Window System, is included with this text.
-
-*** Why not write this text using Literate Programming?
-
-There are many systems for producing computer readable textbooks. For
-many years I have been tempted by the tools developed by the Literate
-Programming community, started by Donald Knuth with his WEB system and
-his many programs, articles and books written with and about that system
-and style. Many other WEB-like systems have been written since,
-providing for Literate Programming with any computer language.
-Unfortunately, they all suffer from some serious weaknesses. First, they
-are designed to work with a single program which, however large it
-grows, is kept in a single file. Second, they do not allow an author to
-present different implementations of the same functions and data
-structures, with a flexible mechanism for making choices among these
-versions when the program file(s) are extracted from the web. Third, the
-traditions of Literate Programming seem to me to view program code as
-relatively unexpressive of the design and intent of the programmer, so
-that it is acceptable among Literate Programming practitioners to write
-fairly cryptic and low level code and surround it with lots of
-explanatory text. I prefer to stress the richness of the linguistic
-mechanisms in modern languages and have programs /as much as possible/
-explain themselves.
+Best current practice is to include a link to a repository with the full history
+of this project. The current official repository is
+https://github.com/GregDavidson/C-By-Example
