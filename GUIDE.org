@@ -15,8 +15,48 @@
 ** [[file:Programs/squares2.c][squares2.c]]
 ** [[file:Programs/greet1.c][greet1.c]]
 See [[file:Programs/greet1-diagram.txt][greet1-diagram.txt]]
-** [[file:Programs/greet2.c][greet2.c]]
+
+The datatype ~char *~ only promises to point to a single character
+- There's no implication that any additional characters are adjacent.
+
+We can create a new datatype ~Strptr~ which will represent our conventions that
+- Strings of Characters are represented by
+  - a pointer to the first character and 
+  - a NUL byte at the end of the String.
+
+see  [[file:Programs/greet2.c][greet2.c]]
+
+If we document this convention and use it consistently, it will help us keep
+straight what we're doing. Alas, C will not actually understand our convention,
+the ~typedef~ simply makes ~Strptr~ an alias for ~char *~.
 ** [[file:Programs/greet3.c][greet3.c]]
+A /C/ /Array/ is a fixed-length sequence of elements of the same type which are
+stored adjacent in memory.
+
+String literals in "double quotes" are anonymous arrays just large enough to
+store the specified characters along with a final ~'\0'~.
+
+The more general method for creating a fixed-length array is to use square
+brackets enclosing the desired [array length] inside. Later we'll find out that
+the same square brackets can for [indexing] arrays.
+
+It's considered a good idea to centralize and documnent any arbitrary global
+values, e.g. array sizes, path names, etc. C has a very general mechanism which
+can be used for such things: /The C Pre-processor/.
+
+Before any syntactic or semantic processing is done on a C Program, the C
+Preprocessor is run to handle all of the weird requests which start with a # at
+the beginning of a line.  These requests can change the source code in very open-ended ways.
+
+The #include request literally inserts the contents of another file into the current code.
+
+The ~#define~ request introduces a /macro/ along with a /substitution/. A very
+simple use of ~#define~ is to centralize those pesky global literals. In this
+case any occurrence of ~STR_SIZE~ will be replaced with ~30~ in the rest of the
+code before any further processing is done, just as if you'd done it with a
+manual edit.
+
+*** Exercise: Draw a diagram showing the memory layout of this program
 ** [[file:Programs/greet4a.c][greet4a.c]]
 ** [[file:Programs/greet4b.c][greet4b.c]]
 ** [[file:Programs/greet5a.c][greet5a.c]]
