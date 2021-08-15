@@ -3,7 +3,7 @@
 #+DATE: Circa 2021
 #+OPTIONS: num:nil
 
-The intention is for you to explore each leading example /before/ you read any
+Our intention is for you to explore each leading example /before/ you read any
 of the following commentary.
 - Read it, compile it, run it, try some experiments!
 - /Then/ read the commentary
@@ -20,6 +20,19 @@ All of this is under a github repository.  Feel free to
 Learners know more about what helps learners than experts will ever know!
 
 * Progressive Examples
+
+These examples are designed to acquaint you with C fundamentals with a minimum
+of friction.
+
+After you've seen a C language or library feature in our examples, if you want
+to know more you can do a web search on, e.g.
+- c for statement
+- c puts function
+
+Much of the quality C reference materials won't make much sense until /after/
+you've finished this tutorial. Many features only make sense to experts, e.g.
+library developers. Don't Panic! You don't need to know everything to use C
+effectively!
 
 If you already know some C or similar languages, pretend you don't - you'll
 learn more if you cultivate /beginner's mind/!
@@ -236,6 +249,15 @@ Consider this block of code:
 - What if you use -- instead of ++?
 
 ** [[file:Programs/dates.c][dates.c]]
+The ~scanf~ function is very handy for reading test data, but should /NOT/ be
+used in production code. If the input format differs from the ~scanf~ format
+string, ~scanf~ will tell you, but resynchrnizing with the intput stream is in
+general impossible.
+
+Production code should generally read interactive input as strings and then do
+any parsing carefully. Sometimes ~sscanf~ will do what you need, but don't be
+surprised if it is insufficient. Dealing well with input from uncontrolled
+sources, e.g. from humans, is a /hard problem/!
 ** [[file:Programs/putint1.c][putint1.c]]
 ** [[file:Programs/putint2.c][putint2.c]]
 *** Exercise challenge:
