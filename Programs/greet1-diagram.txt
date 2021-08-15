@@ -2,23 +2,23 @@ Diagram for C-By-Example/Programs/greet1.c
 
 This file MUST be viewed with a monospace font!
 - Each ASCII character will occupy 1 8-bit byte.
-Pointers will occupy 1 machine word and contain the address of a specific byte.
+- Pointers will occupy 1 machine word and contain the address of a specific byte.
 
 Memory will be reserved to store all string literals.
-Each C implementation has a convention for that storage.
-C programmers don't care where string literals are stored.
+- Each C implementation has a convention for that storage.
+- C programmers don't care where string literals are stored.
 
 C string literals in "double quotes" always have one extra character at the end:
 - ASCII NUL, '\0' in C character notation, 00 in hexadecimal, 00000000 in binary
 
-IF
+IF WE ASSUME THAT
 
 the 'G' of {G e o r g e 00} is at location 5e00 in memory (expressed in hex)
 the 'M' of {M a r t h a 00} is at location 5307 in memory (expressed in hex)
 
-THEN: greet("George") becomes greet( 0x5e00 ) // 0x means a hex literal in C
+THEN greet("George") becomes greet( 0x5e00 ) // 0x means a hex literal in C
 
-AND: greet("Martha") becomes greet( 0x5e07 )
+AND greet("Martha") becomes greet( 0x5e07 )
 
 BUT: we can make it more intuitive using arrows to indicate pointers:
 
