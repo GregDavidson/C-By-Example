@@ -58,11 +58,61 @@ manual edit.
 
 *** Exercise: Draw a diagram showing the memory layout of this program
 ** [[file:Programs/greet4a.c][greet4a.c]]
+The ~sizeof~ operator is computed at /compile time/, i.e. before your program is run.
+It lets you find out how many bytes of storage will be allocated to store a
+variable. By definition, ~sizeof (char)~ is always ~1~.
 ** [[file:Programs/greet4b.c][greet4b.c]]
 ** [[file:Programs/greet5a.c][greet5a.c]]
+The elements of the array ~presidents~ are pointers, which typically occuply one
+machine word of storage. In the C world, a machine word is typically 2 to 8
+bytes and is in general unknowable. ~sizeof presidents~ gives you the number of bytes in the whole array, whereas ~sizeof presidents[0]~ gives you the number of bytes in the first element.  By definition, all elements of an array are of the same size.  Does the division make sense now?
+
+The standard function ~strlen~ is declared in the header file <string.h>. Given
+a pointer to the beginning of an array of characters, it will iterate the
+pointer until it finds the '\0' at the end of the string, counting as it goes.
+Bad things will happen if you pass it a ~char *~ which does /not/ point to a
+'\0'-terminated string!
+
+Variables, such as ~i~ which are defined inside of a block are local to that
+block. Their storage is allocated when execution enters that block and
+deallocated when it leaves. The identifier (name) is only usable inside the
+/scope/ of that block. Any identifier of the same name defined in a different
+scope refers to a different entity.
+
+In C, a /declaration/ such as the typedef on line 4 and the /function prototype/
+on line 8 merely describes something, and can be repeated, e.g. in multiple
+include files without causing an error.
+
+A /definition/ both /declares/ and /creates/ something. C has the /one
+defintion rule/ which says that you may only /define/ something once, even if
+the definitions are identical.
+
+A variable /definition/ allocates storage when the variable is in scope. A
+function /defintion/ allocates code for the function body, i.e. the outer block
+of the function.
+
+Boolean conditions in /control structures/ must be (enclosed in parentheses).
+The /body/ of a control structure is considered to be a single statement.  You
+can use a {block; statement;} when you want to control multiple statements.
 ** [[file:Programs/greet5b.c][greet5b.c]]
+~i++~ increments ~i~ just like ~i = i + 1~ does.  It's just an abbreviation but it has a couple more tricks which we'll learn later.
+
+Notice the four parts of the ~for~ statement. It does the same thing as the code
+in the previous example. The difference is style. When an initialization,
+control and update are strongly related, a ~for~ statement puts them together
+nicely. Otherwise, you should prefer the bulkier code with a ~while~ statement.
 ** [[file:Programs/greet5c.c][greet5c.c]]
+Note that ~#define~ /macros/ can take parameters! No syntax or type checking is
+done on the subsittutions. In this example, ~ARRAY_SIZE~ simply expands to a
+compile-time expression so there's no runtime overhead!
+*** Question:
+ What will ~ARRAY_SIZE~ compute if you try using it on a '\0'-terminated string
+instead of on a fixed-length array?
 ** [[file:Programs/greet5d.c][greet5d.c]]
+As we get increasingly abstract, see if you can follow the expansion of the macros!
+
+Most C compilers have a flag which has them only do pre-processing. You can use
+that to learn what's your program becomes after all of the substitutions!
 ** [[file:Programs/greet5e.c][greet5e.c]]
 ** [[file:Programs/greet5f.c][greet5f.c]]
 ** [[file:Programs/ops_num.c][ops_num.c]]
@@ -71,21 +121,81 @@ manual edit.
 ** [[file:Programs/if3.c][if3.c]]
 ** [[file:Programs/if4.c][if4.c]]
 ** [[file:Programs/if5.c][if5.c]]
+~enum~ is syntactic sugar for a mnemonic set of integers. Many programmers use a
+series of ~#define~ requests instead, inspired by ancient code bases written before ~enum~ was added to the language.
+
+The ~enum~ notation is more compact and the compiler does proper syntactic and
+semantic checking on your ~enum~ code. You should prefer using ~enum~ to using
+~#define~ for integer constants /except/ for when you're using ~#define~ values
+to control the preprocessor, and advanced technique we may cover later!
 ** [[file:Programs/switch1.c][switch1.c]]
+~switch~ can be syntactically nicer than nested ~if~ statements. It has some
+limitations. It used to be faster than nested ~if~ statements. Modern compilers
+generally produce the same code for nested ~if~ statements as they do for a
+~switch~. Watch out, though: After the ~switch~ trnasfers control to a statement
+labeled with a matching ~case~, the execution of the block will continue as it
+normally would, unless something like a ~return~ or a ~break~ takes you out!
 ** [[file:Programs/switch2.c][switch2.c]]
+*** When is the ~WHEN~ macro making a difference is this example?
 ** [[file:Programs/types.c][types.c]]
 ** [[file:Programs/types2.c][types2.c]]
 ** [[file:Programs/struct1.c][struct1.c]]
 See [[file:Programs/struct1-diagram.txt][struct1-diagram.txt]]
 ** [[file:Programs/struct2.c][struct2.c]]
+*** Challenge: Diagram what memory looks like!
 ** [[file:Programs/struct3.c][struct3.c]]
+*** What are the /macros/ doing here?
+*** What does memory look like?
 ** [[file:Programs/struct4.c][struct4.c]]
+*** How could we achieve this abstraction without /macros/?
+How could we achive at least this level of economy of expression?
+
+How would your proposed alteranative designs be better or worse?
 ** [[file:Programs/employee1.h][employee1.h]]
+It's very common to want to share code among multiple programs and/or multiple
+modules of a large complex program. Sharable C code Files which contain no
+/definitions/ are usually given the extension ~.h~. What's special about such
+files, i.e., why should they only contain declarations, not defintions?
 ** [[file:Programs/struct5.c][struct5.c]]
+** [[file:Programs/array1.h][array1.h]]
+These /macros/ can be used more generally than the ones we've seen before, so
+it's nice to have them by themselves in an include file.
 ** [[file:Programs/array2.h][array2.h]]
+A very useful feature of the C Preprocessor is conditional expansion, which can allow unwanted or unneded code to simply disappear.
+
+Conditional preprocessor expansion is often used to bring in variations of code
+that is only suitable for particular situations or environments, e.g. those
+using particular operating systems, network services, hardware.
+
+In this example, we're using what is now a common technique: ensuring that
+declarations using ~#include~ are only brought into a compilation once. This can
+be tricky as /include files/ often include /other include files/ and this can
+geneate loops which would otherwise try to generate programs of infinite size!
+
+You'll see this technique used in all standard header files, e.g. <stdio.h>,
+<string.h>, etc. and you should always use it in the header files you write!
 ** [[file:Programs/employee2.h][employee2.h]]
 ** [[file:Programs/struct6.c][struct6.c]]
 ** [[file:Programs/args.c][args.c]]
+You should run this program from the command line so that you can supply it with different arguments.
+
+*** Exercise challenge: How are command line arguments passed to main?
+Look carefully at how the arguments are being processed.  How must they be arranged in memory for this to work?
+
+*** Exercise challenge: How are ~i++~ and ~++i~ related?
+
+Consider this block of code:
+#+begin_src C
+  int i1 = 0, j1 = 0;
+  int i2 = i1++, j2 = ++j1;
+  printf("i1 = %d, j1 = %d, i2 = %d, j2 = %d\n", i1, i2, i3, i4);
+#+end_src
+- What do you expect the output to be?
+- Put it in a test program and see if you're right?
+- What's a simple explanation?
+- When might this be useful?
+- What if you use -- instead of ++?
+
 ** [[file:Programs/dates.c][dates.c]]
 ** [[file:Programs/putint1.c][putint1.c]]
 ** [[file:Programs/putint2.c][putint2.c]]
