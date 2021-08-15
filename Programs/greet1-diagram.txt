@@ -1,4 +1,4 @@
-Diagram for C-By-Example/Programs/greet1-diagram.txt
+Diagram for C-By-Example/Programs/greet1.c
 
 This file MUST be viewed with a monospace font!
 - Each ASCII character will occupy 1 8-bit byte.
