@@ -63,7 +63,7 @@ To maximize your success with this course, you should
 + Set up a /C Programming Environment/ on Your Machine
   - or you could use an online environment
   - see /Setting up a C Programming Environment/ below
-+ Spend some time with each file in the [[file:PROGRAM-LIST][PROGRAM-LIST]] order
++ Spend some time with each file in the [[file:GUIDE.org][GUIDE.org]] in the given order
 + Be sure that you understand the function of each element
 + Compile and run each program
 + Try some modifications, exploring other possibilities
