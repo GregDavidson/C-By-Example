@@ -98,6 +98,10 @@ languages. If you've already been programming in some other language, you may
 find that it already supports C or that it will if you download a few free
 components.
 
+NOTE: You can save a lot of time by either [[https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository][cloning this repository]] or
+downloading an archive in tar format so that you'll have all of these files
+handy on your system. Github has t
+
 **** C Programming on a Microsoft Windows system
 
 Many people use https://visualstudio.microsoft.com/
@@ -105,9 +109,9 @@ Many people use https://visualstudio.microsoft.com/
 
 **** C Programming on a GNU Linux system
 
-  - Consult your documentation for how to install the usual programming environment 
-If you don't yet have a favorite editor, try /nano/.
-  - Experts prefer /vim/ or /emacs/ but don't learn them now!
+Consult your documentation for how to install the usual programming environment 
+- If you don't yet have a favorite editor, try /nano/
+- Experts tend to prefer /vim/ or /emacs/ but don't learn them now!
 
 Prefer running /gcc/ and /make/ from the shell - probably /bash/ - rather than using a GUI.
 In this example, the shell types a prompt, e.g. /$/ and you type the rest:
