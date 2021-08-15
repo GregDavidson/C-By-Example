@@ -21,6 +21,9 @@ Learners know more about what helps learners than experts will ever know!
 
 * Progressive Examples
 
+If you already know some C or similar languages, pretend you don't - you'll
+learn more if you cultivate /beginner's mind/!
+
 ** [[file:Programs/hello1.c][hello1.c]]
 [[file:Programs/hello1+comments.c][hello1+comments.c]]
 ** [[file:Programs/hello2.c][hello2.c]]
