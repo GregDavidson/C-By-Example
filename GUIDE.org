@@ -199,10 +199,13 @@ See [[file:Programs/struct1-diagram.txt][struct1-diagram.txt]]
 *** What are the /macros/ doing here?
 *** What does memory look like?
 ** [[file:Programs/struct4.c][struct4.c]]
-*** How could we achieve this abstraction without /macros/?
-How could we achive at least this level of economy of expression?
+*** How can we achieve similar benefits without /macros/?
+How could we achive economy of expression and reliability without macros?
 
-How would your proposed alteranative designs be better or worse?
+Or with fewer macros?
+
+Evaluate your proposed alternative designs against one another and against
+alternatives from other sources.
 ** [[file:Programs/employee1.h][employee1.h]]
 It's very common to want to share code among multiple programs and/or multiple
 modules of a large complex program. Sharable C code Files which contain no
