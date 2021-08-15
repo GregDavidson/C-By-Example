@@ -29,9 +29,29 @@ learn more if you cultivate /beginner's mind/!
 ** [[file:Programs/hello2.c][hello2.c]]
 [[file:Programs/hello2+comments.c][hello2+comments.c]]
 ** [[file:Programs/hello3.c][hello3.c]]
+Perfectly valid. Only required whitespace used. Not advisable! Some
+machine-generated C code looks like this. There are programs which will clean up
+undesirable layout in C and other languages. The golden rule is to be consistent
+with the layout which your colleagues use.
 ** [[file:Programs/putchar.c][putchar.c]]
+~putchar~ is very fast, but not so good when you have more than a few characters
+to output!
 ** [[file:Programs/squares1.c][squares1.c]]
+In modern C functions should be /declared/ before they are /called/.  One way is to make sure that their full /definitions/ preceed their use.
+
+By the way, ~printf~ is very flexible.  It is much slower than ~puts~ or
+~putchar~ but very convenient and popular.
 ** [[file:Programs/squares2.c][squares2.c]]
+Another way to /declare/ a function is with a /function prototype/, consisting
+of only the /head/ of the function followed by a semicolon. This allows the
+function /definitions/ to be given in any order or even to be linked in from
+libraries or other modules.
+
+The standard header files, such as <stdio.h> contain /function prototypes/ of
+the functions that can be brought in from libraries with a /linker/, /after/
+your program is compiled (static linking) or even at the time it is run (dynamic
+linking). Other than this mention, this tutorial does not cover linker features
+as they are different on different C development platforms.
 ** [[file:Programs/greet1.c][greet1.c]]
 See [[file:Programs/greet1-diagram.txt][greet1-diagram.txt]]
 
