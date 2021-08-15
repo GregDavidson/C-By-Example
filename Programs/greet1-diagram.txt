@@ -23,15 +23,21 @@ AND: greet("Martha") becomes greet( 0x5e07 )
 BUT: we can make it more intuitive using arrows to indicate pointers:
 
         {M a r t h a 00}
-         ^         {G e o r g e 00}
-         |          ^
-         |          |
-         |          |
-         |          |
-         |          |
-1        |   greet( | ) printf( / )
-         |                     /
-2 greet( | ) ... printf( | )  /
+         ^
+         |            {G e o r g e 00}
+         |             ^
+         |             |
+         |             |\_________ 
+         |             |          \
+1        |      greet( | ) printf( \, / )
+         |                           /
+         |                          /
+         |\_______________         /
+         |                \       /
+         |                 \     /
+2 greet( | ) ... printf( |, \ ) /
+                         |     /
+                         |    /
                          |   /
                          |  /
                          | /
