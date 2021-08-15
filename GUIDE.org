@@ -34,7 +34,7 @@ A /C/ /Array/ is a fixed-length sequence of elements of the same type which are
 stored adjacent in memory.
 
 String literals in "double quotes" are anonymous arrays just large enough to
-store the specified characters along with a final ~'\0'~.
+store the specified characters along with a final '\0'.
 
 The more general method for creating a fixed-length array is to use square
 brackets enclosing the desired [array length] inside. Later we'll find out that
