@@ -1,4 +1,4 @@
-#+TITLE: C By Example
+#+TITLE: Virtual Infinity Systems
 #+SUBTITLE: A Super-Short Introduction to the C Programming Language
 #+AUTHOR: J. Greg Davidson
 #+DATE: Circa 2021
