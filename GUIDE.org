@@ -3,6 +3,22 @@
 #+DATE: Circa 2021
 #+OPTIONS: num:nil
 
+The intention is for you to explore each leading example /before/ you read any
+of the following commentary.
+- Read it, compile it, run it, try some experiments!
+- /Then/ read the commentary
+- What questions remain?  Write them down!
+
+In some cases we ask questions in the commentary and suggest exercises.
+
+All of this is under a github repository.  Feel free to
+- Post issues
+- Clone this repository
+- Improve things
+- Submit pull requests!
+
+Learners know more about what helps learners than experts will ever know!
+
 * Progressive Examples
 
 ** [[file:Programs/hello1.c][hello1.c]]
