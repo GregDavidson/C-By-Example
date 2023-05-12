@@ -288,7 +288,7 @@ Hints:
 - PutInt should pass a 0 to initialize the new parameter
 - Be /Maximally Lazy/: each call to PutPosInt should
   - either print a single digit
-  - or a single comma 
+  - or a single comma
   - or print nothing!
 ** [[file:Programs/getline1.c][getline1.c]]
 A more common but maybe less clear version:
