@@ -21,5 +21,7 @@ int main(void) {
   putchar('a' + 3);
   putchar('\n');
 
+  puts("That's all for now!")
+
   return 0;
 }

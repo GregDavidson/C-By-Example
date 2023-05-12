@@ -38,23 +38,28 @@ If you already know some C or similar languages, pretend you don't - you'll
 learn more if you cultivate /beginner's mind/!
 
 ** [[file:Programs/hello1.c][hello1.c]]
-[[file:Programs/hello1+comments.c][hello1+comments.c]]
+- [[file:Programs/hello1+comments.c][hello1+comments.c]]
+The traditional first C Program!
 ** [[file:Programs/hello2.c][hello2.c]]
-[[file:Programs/hello2+comments.c][hello2+comments.c]]
+- [[file:Programs/hello2+comments.c][hello2+comments.c]]
+The same program with each /lexical token/ (like words in a
+human language) on a separate line. The compiler doesn't care!
 ** [[file:Programs/hello3.c][hello3.c]]
-Perfectly valid. Only required whitespace used. Not advisable! Some
-machine-generated C code looks like this. There are programs which will clean up
-undesirable layout in C and other languages. The golden rule is to be consistent
-with the layout which your colleagues use.
+Only required whitespace used. Not advisable! Some machine-generated C code
+looks like this. There are programs which will clean up undesirable layout in C
+and other languages. The golden rule is to be consistent with the layout which
+your colleagues use.
 ** [[file:Programs/putchar.c][putchar.c]]
-~putchar~ is very fast, but maybe inconvenient when you have more than a few characters
-to output!
+~putchar~ is very fast, but maybe inconvenient when you have more than a few
+characters to output! Alternatively, the ~puts~ function can output a whole
+/string/ of characters and automatically adds a newline ~\n~ at the end.
 ** [[file:Programs/squares1.c][squares1.c]]
 In /Modern C/ functions should be /declared/ before they are /called/. One way
 is to make sure that their full /definitions/ preceed their use.
 
-By the way, ~printf~ is very flexible.  It is much slower than ~puts~ or
-~putchar~ but very convenient and popular.
+The ~printf~ function can print multiple arguments in diverse formats controlled
+by its first argument, a /format string/. This makes ~printf~ very convenient,
+but it's less efficient than ~puts~ or ~putchar~.
 ** [[file:Programs/squares2.c][squares2.c]]
 Another way to /declare/ a function is with a /function prototype/, consisting
 of only the /head/ of the function followed by a semicolon. This allows the
