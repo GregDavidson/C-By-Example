@@ -2,8 +2,7 @@
 
 Part of the [[https://gregdavidson.github.io/loel/][League of Extraordinary Learners]] curriculum for [[file:../README.org][Learning C Programming]].
 
-
-This project will significantly support your understanding of
+This project should significantly increase your understanding of
 - Computer Architecture
 - Posix System Calls
 - C Programming
