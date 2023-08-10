@@ -1,0 +1,44 @@
+* Writing A Simple Posix Shell in C
+
+This project will significantly support your understanding of
+- Computer Architecture
+- Posix System Calls
+- C Programming
+
+It is not intended to
+- Create a [[https://en.wikipedia.org/wiki/Comparison_of_command_shells][competitive shell]]
+- Although you're welcome to take it in that direction!
+
+Background for understand how to do this
+- [[https://github.com/GregDavidson/on-computing/blob/main/computing-architecture.org][Computing Architecture Folding Document]]
+      - You will need to open this in Emacs with OrgMode to explore it!
+
+Examples
+- [[file:smallshell.c][smallshell.c]] :: The simplest example
+- [[file:pipeshell.c][pipeshell.c]] :: Adding pipelines
+
+Look at features in existing shells, e.g [[https://en.wikipedia.org/wiki/Bourne_shell][sh]], [[https://en.wikipedia.org/wiki/Fish][fish]]
+- What do you like?
+- What would you do differently?
+- Implement some of those things!
+
+Suggestions
+- Make parsing more robust and regular
+      - Where should you not parse?
+            - e.g. Inside of quoted strings
+      - What should not need whitespace separators?
+            - e.g. Special character operators
+- Add more redirection operators, e.g.
+      - >, <
+      - FD>FD, FD<FD where FD is an optional File Descriptor number
+- Add { blocks; } and ( subshells )
+- Add a great feature no current shell has
+      - E.g. fork a shell to a new terminal
+            - forks the current shell
+            - changes its controlling terminal, stdin, stdout, stderr to a new device
+            - to create a new independent shell in a new
+              device/terminal/tab/window (a frequent desire) with the initial
+              state of an existing shell (very handy).
+            - Come up with a good name or syntax for your feature
+
+- the [[file:Solutions][Solutions]] directory contains some modest examples
