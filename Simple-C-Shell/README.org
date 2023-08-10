@@ -43,4 +43,4 @@ Suggestions
               state of an existing shell (very handy).
             - Come up with a good name or syntax for your feature
 
-- the [[file:Solution][Solution]] directory contains some modest examples
+- the [[file:Solutions][Solutions]] directory contains some modest examples
