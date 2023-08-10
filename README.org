@@ -1,4 +1,4 @@
-#+TITLE: Virtual Infinity Systems
+#+TITLE: C By Example
 #+SUBTITLE: A Super-Short Introduction to the C Programming Language
 #+AUTHOR: J. Greg Davidson
 #+DATE: Circa 2021
@@ -7,7 +7,7 @@
 
 ** Copyright and License
 
-Copyright (c) 2021 J. Greg Davidson
+A [[https://gregdavidson.github.io/loel/][League of Extraordinary Learners]] curriculum!
 
 The materials in this course may be used under the conditions of the [[file:LICENSE.org][license]].
 
